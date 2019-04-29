@@ -22,5 +22,28 @@ gcc -S -save-temps hello4.c
 
 Genera el .s con las sentencias mov, entre otras, en codigo assembler.
 
-6) 
+6) Para ensamblar hello4.s en hello4.o use
+
+gcc -c hello4.s -o hello4.o
+
+Me genero el archivo .o pero sin vincular
+
+7) gcc hello4.o -o hello4
+
+Me da el siguiente error: "Undefined reference to 'prontf'"
+
+8) Corrijo en hello5.c, cambiando prontf por printf
+
+gcc -E hello5.c -o hello5.i
+
+gcc -S -save-temps hello5.c -> al ejecutar esta linea me da un warning de que format'%d' espera un int como argumento.
+
+gcc -c hello5.s -o hello5.o
+
+gcc hello5. -o hello5 -> me genera el ejecutable
+
+9) hello6 no hace falta ya que me funciona correctamente
+
+10) hello7 funciona ya que se le pasa al printf el argumento int que espera, esta definida la libreria estandar.
+
 
